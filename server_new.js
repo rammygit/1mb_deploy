@@ -145,15 +145,5 @@ const process = async function (res,basePath, dirent) {
 }
 
 
-// const readDirectory = async function(dirName) {
-
-
-
-// }
-
-
-
-
-
 //start the server
 app.listen(3000, () => console.log('Server running on port 3000!'))
