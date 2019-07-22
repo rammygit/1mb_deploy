@@ -13,13 +13,13 @@ const app = express()
 
 const URL = 'https://api.1mb.site'
 
-const BASE_PATH = __dirname
+//const BASE_PATH = __dirname
 
 const DIRECTORY_IGNORE = ['node_modules','.git']
 
 const FILE_IGNORE = ['.gitignore','server.js','server_new.js','package-lock.json','package.json']
 
-// const BASE_PATH = '/Users/ram/Documents/projects/quickstart_hugo/public'
+ const BASE_PATH = '/Users/ram/Documents/projects/html5-boilerplate_v7.2.0'
 
 const deployparams = {
 
@@ -72,7 +72,7 @@ const readDirectory = async function (res,basePath) {
         //  console.log('dirent stat =  is file  =>', stat.isFile())
         if (stat.isFile()) {
             console.log(' it is a file => ', dirent.name)
-            if (file_ext === '.html' || file_ext === '.js' || file_ext === '.css') {
+            if (file_ext === '.html' || file_ext === '.js' || file_ext === '.css' || file_ext === '.md') {
                 if(FILE_IGNORE.indexOf (dirent.name ) == -1) {
                     console.log('reading the file => ',dirent.name)
                     process(res,basePath, dirent)
@@ -118,8 +118,8 @@ const process = async function (res,basePath, dirent) {
         uri: URL,
         formData: {
             action: 'deploy',
-            site: 'landing',
-            key: '92213815df30a4e0f13d4dc96a5ec353',
+            site: 'staticblog',
+            key: 'f2702379de37936ed85888d729f7a3b9',
             code: fileContent,
             resource: dirent.name
 
